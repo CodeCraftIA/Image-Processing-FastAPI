@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">  <!-- Link to favicon -->
+    <title>Upload Image</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #b0c2d1; /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="file"]:focus {
+            outline: none;
+            border-color: #0056b3;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Spinner styles */
+        .spinner {
+            display: none; /* Hidden by default */
+            border: 8px solid #f3f3f3; /* Light gray */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Loading message styles */
+        .loading-message {
+            display: none; /* Hidden by default */
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333; /* Darker color for readability */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image for Processing</h1>
+        <form action="/upload" enctype="multipart/form-data" method="post" onsubmit="showLoading()">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <div class="spinner" id="loadingSpinner"></div> <!-- Loading spinner -->
+        <div class="loading-message" id="loadingMessage">Processing your image, please wait...</div> <!-- Loading message -->
+        <footer>
+            <p>Supported formats: <strong>.jpg, .png, .jpeg, .gif</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'block'; // Show the spinner
+            document.getElementById('loadingMessage').style.display = 'block'; // Show the loading message
+        }
+    </script>
+</body>
+</html>
+
+
+

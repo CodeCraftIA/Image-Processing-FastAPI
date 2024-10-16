@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">  <!-- Link to favicon -->
+    <title>Processed Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b0c2d1; /* Light blue background */
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+            font-weight: bold; /* Make the heading bold */
+        }
+
+        h2 {
+            color: black;
+            margin: 20px 0;
+            font-weight: bold; /* Make the heading bold */
+        }
+
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-box {
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            max-width: 500px;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f0f0f5;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 30px;
+            display: inline-block;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Processed Results</h1>
+
+    <div class="results-container">
+        <!-- Segmented Image -->
+        <div class="image-box">
+            <h2>Segmented Image</h2>
+            <img src="/{{ segmented_image_url }}" alt="Segmented Image">
+        </div>
+
+        <!-- Face Detection -->
+        <div class="image-box">
+            <h2>Face Detection</h2>
+            <img src="/{{ face_detection_url }}" alt="Face Detection">
+        </div>
+
+        <!-- Background Removed Image -->
+        <div class="image-box">
+            <h2>Background Removed</h2>
+            <img src="/{{ background_removed_url }}" alt="Background Removed Image">
+        </div>
+
+        <!-- Contours Image -->
+        <div class="image-box">
+            <h2>Contours</h2>
+            <img src="/{{ contour_image_url }}" alt="Contours Image">
+        </div>
+
+        <!-- Image Classification Results -->
+        <div class="image-box">
+            <h2>Image Classification Results (Top 3 Predictions)</h2>
+            <ul>
+                {% for pred in predictions %}
+                <li>{{ pred[1] }}: {{ (pred[2] * 100) | round(2) }}%</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <a href="/">Back to Upload Page</a>
+</body>
+</html>
+
