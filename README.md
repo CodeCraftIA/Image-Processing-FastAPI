@@ -21,6 +21,25 @@ The primary objectives of this project include:
 - **TensorFlow/Keras**: For implementing the MobileNet model for image classification. 📊  
 - **HTML/CSS**: For building the user interface. 🎨  
 
+### Instructions Overview
+
+1. **Clone the Repository**: Users can copy the URL from their GitHub repository.  
+   ```bash
+   git clone https://github.com/CodeCraftIA/image-processing-web-app.git
+2. **Navigate to the Project Directory**: Ensure you change to the correct project folder.  
+   ```bash
+   cd image-processing-web-app
+3. **Install Dependencies**: Using a virtual environment is recommended for easier package management and to avoid conflicts.  
+   ```bash
+   pip install -r requirements.txt
+4. **Run the Application**: This command starts the FastAPI application, and --reload allows for automatic updates during development.  
+   ```bash
+   uvicorn app:app --reload
+5. **Access the Application**: Users can open the browser to interact with the app. Visit:  
+   ```bash
+   http://127.0.0.1:8000
+
+
 ## RESULTS AND FINAL THOUGHTS  
 
 ### Interface Before and After Upload  
