@@ -47,7 +47,7 @@ After uploading an image, users will receive various processed outputs, such as 
 
 #### Processed Output  
 <div style="display: flex; align-items: center;">
-    <img src="https://i.ibb.co/qCy4GQw/seg.png" height="300" width="600" style="margin-right: 20px;"/>
+    <img src="https://i.ibb.co/qCy4GQw/seg.png" height="300" width="400" style="margin-right: 20px;"/>
     <div>
         <p><strong>Figure 3:</strong> Segmented Image Output</p>
     </div>
@@ -57,7 +57,7 @@ After uploading an image, users will receive various processed outputs, such as 
 The final results page provides users with a comprehensive view of all processed images and classification results.  
 
 <div style="display: flex; align-items: center;">
-    <img src="https://i.ibb.co/6cKgFCP/face.png" height="300" width="600" style="margin-right: 20px;"/>
+    <img src="https://i.ibb.co/6cKgFCP/face.png" height="300" width="400" style="margin-right: 20px;"/>
     <div>
         <p><strong>Figure 4:</strong> Face Detection Output</p>
     </div>
